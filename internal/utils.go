@@ -17,3 +17,13 @@ func DateStr2Date(dateString string) (time.Time, error) {
 
 	return dateResult, nil
 }
+
+
+func InitName2MailMap(data []map[string]string) map[string]string {
+	name2email := make(map[string]string, len(data))
+
+	for _, elem := range data {
+		name2email[elem["name"]] = elem["email"]
+	}
+	return name2email
+}
